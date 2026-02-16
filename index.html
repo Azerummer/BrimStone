@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>卡牌肉鸽：灰烬远征</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="top-bar">
+      <div>
+        <h1>卡牌肉鸽：灰烬远征</h1>
+        <p id="floorInfo">第 1 层 / 6</p>
+      </div>
+      <button id="restartBtn" class="btn secondary">重新开局</button>
+    </header>
+
+    <section class="battlefield">
+      <article class="panel player-panel">
+        <h2>你</h2>
+        <p>生命：<span id="playerHp"></span> / <span id="playerMaxHp"></span></p>
+        <p>护甲：<span id="playerBlock"></span></p>
+        <p>能量：<span id="playerEnergy"></span> / <span id="playerMaxEnergy"></span></p>
+        <p>抽牌堆：<span id="drawCount"></span>，弃牌堆：<span id="discardCount"></span></p>
+      </article>
+
+      <article class="panel enemy-panel">
+        <h2 id="enemyName">敌人</h2>
+        <p>生命：<span id="enemyHp"></span> / <span id="enemyMaxHp"></span></p>
+        <p>护甲：<span id="enemyBlock"></span></p>
+        <p>意图：<span id="enemyIntent"></span></p>
+      </article>
+    </section>
+
+    <section class="hand-zone">
+      <h3>手牌</h3>
+      <div id="hand" class="card-row"></div>
+      <button id="endTurnBtn" class="btn">结束回合</button>
+    </section>
+
+    <section id="rewardSection" class="reward hidden">
+      <h3>战利品：选择一张卡加入牌组</h3>
+      <div id="rewardCards" class="card-row"></div>
+      <button id="skipRewardBtn" class="btn secondary">跳过奖励</button>
+    </section>
+
+    <section class="log-panel panel">
+      <h3>战斗日志</h3>
+      <ul id="logList"></ul>
+    </section>
+  </main>
+
+  <template id="cardTemplate">
+    <button class="card">
+      <div class="card-title"></div>
+      <div class="card-cost"></div>
+      <div class="card-desc"></div>
+      <div class="card-type"></div>
+    </button>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
