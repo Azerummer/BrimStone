@@ -1,0 +1,164 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --panel-soft: #334155;
+  --text: #e2e8f0;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617 70%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.game-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.top-bar,
+.battlefield,
+.hand-zone,
+.reward,
+.log-panel {
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 6px 0;
+}
+
+.battlefield {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #475569;
+}
+
+.enemy-panel {
+  border-color: #7f1d1d;
+}
+
+.hand-zone {
+  text-align: center;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.card {
+  border: 1px solid #64748b;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #1f2937, #0f172a);
+  color: var(--text);
+  text-align: left;
+  padding: 10px;
+  min-height: 130px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover:enabled {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.35);
+}
+
+.card:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-cost {
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.card-type {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.secondary {
+  background: var(--panel-soft);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.log-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  display: grid;
+  gap: 8px;
+}
+
+.log-panel li {
+  background: #0b1220;
+  border-radius: 8px;
+  padding: 6px 8px;
+  border-left: 3px solid #475569;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .battlefield {
+    grid-template-columns: 1fr;
+  }
+}
